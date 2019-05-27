@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, View, Button} from 'react-native';
+import {StyleSheet, View, Button, Alert} from 'react-native';
 import RNAccountKit from 'react-native-facebook-account-kit'
 import axios from "axios";
 
@@ -56,6 +56,7 @@ export default class App extends Component {
       // this is the full phone number, e.g. +249912300000
       const { number } = response.data.phone
       console.warn(number)
+      Alert.alert("Phone", number)
     })
     .catch((e) => console.log(e))
   }
